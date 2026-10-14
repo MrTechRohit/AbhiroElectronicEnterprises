@@ -20,43 +20,41 @@
         <h1>Your Shopping Cart</h1>
         <c:choose>
             <c:when test="${empty sessionScope.cart}">
-                <p class="empty-msg">Your cart is currently empty. Explore our catalog!</p>
+                <p class="empty-msg">Your cart is empty.</p>
             </c:when>
             <c:otherwise>
-                <div class="cart-table-wrapper">
-                    <table class="cart-table">
+                <table class="cart-table">
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    <c:set var="total" value="0"/>
+                    <c:forEach var="item" items="${sessionScope.cart}" varStatus="status">
                         <tr>
-                            <th>Item Name</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <td>${item.name}</td>
+                            <td>${item.category}</td>
+                            <td>₹ ${item.price}</td>
+                            <td>
+                                <form action="shop" method="post">
+                                    <input type="hidden" name="action" value="remove">
+                                    <input type="hidden" name="index" value="${status.index}">
+                                    <button type="submit" class="btn-remove">Remove</button>
+                                </form>
+                            </td>
                         </tr>
-                        <c:set var="total" value="0"/>
-                        <c:forEach var="item" items="${sessionScope.cart}" varStatus="status">
-                            <tr>
-                                <td>${item.name}</td>
-                                <td>${item.category}</td>
-                                <td>₹ ${item.price}</td>
-                                <td>
-                                    <form action="shop" method="post">
-                                        <input type="hidden" name="action" value="remove">
-                                        <input type="hidden" name="index" value="${status.index}">
-                                        <button type="submit" class="btn-remove">Remove</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <c:set var="total" value="${total + item.price}"/>
-                        </c:forEach>
-                    </table>
-                    <div class="cart-summary">
-                        <h3>Total Amount: ₹ ${total}</h3>
-                        <div class="cart-actions-group">
-                            <form action="shop" method="post" style="display:inline;">
-                                <input type="hidden" name="action" value="clear">
-                                <button type="submit" class="btn-clear">Clear Cart</button>
-                            </form>
-                            <a href="shop?action=checkout" class="btn-checkout">Proceed to Checkout &rarr;</a>
-                        </div>
+                        <c:set var="total" value="${total + item.price}"/>
+                    </c:forEach>
+                </table>
+                <div class="cart-summary">
+                    <h3>Total: ₹ ${total}</h3>
+                    <div class="cart-actions-group">
+                        <form action="shop" method="post" style="display:inline;">
+                            <input type="hidden" name="action" value="clear">
+                            <button type="submit" class="btn-clear">Clear Cart</button>
+                        </form>
+                        <a href="shop?action=checkout" class="btn-checkout">Proceed to Checkout &rarr;</a>
                     </div>
                 </div>
             </c:otherwise>

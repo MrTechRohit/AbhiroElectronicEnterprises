@@ -6,19 +6,16 @@
 
     <display-name>Abhiro Electronic Enterprises</display-name>
 
-    <!-- Servlet Registration -->
     <servlet>
         <servlet-name>ShopServlet</servlet-name>
         <servlet-class>com.abhiro.controller.ShopServlet</servlet-class>
     </servlet>
 
-    <!-- Servlet Mapping -->
     <servlet-mapping>
         <servlet-name>ShopServlet</servlet-name>
         <url-pattern>/shop</url-pattern>
     </servlet-mapping>
 
-    <!-- Default Welcome File -->
     <welcome-file-list>
         <welcome-file>shop</welcome-file>
     </welcome-file-list>

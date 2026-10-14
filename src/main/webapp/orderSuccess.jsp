@@ -18,7 +18,7 @@
         <div class="success-card">
             <span class="success-icon">✅</span>
             <h1>Order Placed Successfully!</h1>
-            <p>Thank you for shopping with <strong>Abhiro Electronic Enterprises</strong>. Your order has been confirmed and will be delivered soon.</p>
+            <p>Thank you for shopping with <strong>Abhiro Electronic Enterprises</strong>. Your order has been confirmed.</p>
             <a href="shop" class="btn-continue">Continue Shopping</a>
         </div>
     </main>
