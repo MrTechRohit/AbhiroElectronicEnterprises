@@ -1,45 +1,52 @@
-🚀 Abhiro Electronic Enterprises
-A Full-Stack E-Commerce Web Application Built with Java Servlets, JSP, XML, and MySQL
+# Abhiro Electronic Enterprises 🛒⚡
 
-📖 About the Project
-Abhiro Electronic Enterprises is a fully functional, dynamic e-commerce mini-project designed to simulate a modern online retail store for home electronics and appliances (such as ACs, Televisions, Refrigerators, and Washing Machines).
+A modern, responsive, and dynamic e-commerce web application built for Home Electronics & Appliances using **Java Servlets, JSP, JSTL, HTML5, and CSS3**.
 
-The project follows a robust MVC (Model-View-Controller) architecture, utilizing Jakarta Servlets for backend logic control, JSP (JavaServer Pages) for dynamic views, XML-based routing (web.xml), and JDBC for persistent database operations.
+## 🚀 Features
 
-✨ Key Features & Functionalities
-Dynamic Product Catalog & Filtering: Browse home electronics seamlessly and filter products instantly by specific categories (ACs, Televisions, Appliances, Laundry).
+* **Product Catalog & Filtering:** Browse electronic items categorized into ACs, Televisions, Appliances, and Laundry with real-time category filtering tabs.
+* **Shopping Cart Management:** Add products to the cart, remove specific items, view dynamic totals, and clear the cart seamlessly.
+* **Admin Dashboard (CRUD):** 
+  * **Create:** Add new products with name, price, category, and custom image filenames.
+  * **Read:** View existing inventory in a clean tabular format.
+  * **Update:** Edit existing product details easily.
+  * **Delete:** Remove products from the catalog.
+* **Secure Checkout Flow:** User-friendly billing/checkout form and order success confirmation screen.
+* **Glowing UI/UX:** Designed with a modern dark-theme neon/glow aesthetic using custom CSS3.
 
-Admin CRUD Panel: A dedicated inventory management dashboard that allows administrators to Create (Add) new products and Delete existing items directly from the MySQL database.
+---
 
-Shopping Cart Management: Add items to a session-based cart, view subtotal amounts, remove individual items, or clear the entire cart.
+## 🛠️ Tech Stack
 
-Secure Checkout & Order Success Flow: Collects user shipping information and payment preferences (COD / UPI), culminating in a dedicated order confirmation success screen.
+* **Backend:** Java Servlets, JSP (JavaServer Pages), JSTL (Jakarta Server Pages Standard Tag Library)
+* **Frontend:** HTML5, CSS3 (Responsive Grid & Flexbox layout)
+* **Server:** Apache Tomcat (v11.0+)
+* **Storage:** In-Memory / Session-based Java Collections (Fast & lightweight)
 
-Custom Branding: Styled with modern glassmorphism aesthetics, responsive grids, and custom corporate logo integration.
+---
 
-🛠️ Tech Stack & Tools
-Backend: Java EE, Jakarta Servlets, JSP (JavaServer Pages), JDBC
+## 📂 Project Directory Structure
 
-Database: MySQL, SQL Queries
-
-Configuration: XML (web.xml deployment descriptor)
-
-Frontend: HTML5, CSS3 (Responsive Grid, Custom UI)
-
-Server / IDE: Apache Tomcat, Eclipse IDE for Enterprise Java
-
-📂 Project Architecture
+```text
 AbhiroElectronicEnterprises/
-├── src/main/java/com/abhiro/controller/
-│   └── ShopServlet.java          # Main Controller handling routing, cart, & CRUD logic
-├── src/main/webapp/
-│   ├── WEB-INF/
-│   │   └── web.xml               # XML Deployment Descriptor
-│   ├── images/
-│   │   └── logo.png              # Company Branding Logo
-│   ├── catalog.jsp               # Product Storefront & Category Filters
-│   ├── admin.jsp                 # Admin CRUD Inventory Panel
-│   ├── cart.jsp                  # Shopping Cart & Bill Calculation
-│   ├── checkout.jsp              # Billing & Shipping Form
-│   ├── orderSuccess.jsp          # Order Confirmation Screen
-│   └── style.css                 # Modern UI Stylesheet
+│
+├── src/main/java/
+│   └── com/abhiro/controller/
+│       └── ShopServlet.java          # Main Controller handling routing & CRUD logic
+│
+└── src/main/webapp/
+    ├── WEB-INF/
+    │   └── web.xml                   # Servlet mappings & configuration
+    ├── images/
+    │   ├── logo.png                  # Company logo
+    │   ├── ac.jpg                    # Product thumbnails
+    │   ├── tv.jpg
+    │   ├── fridge.jpg
+    │   └── laundry.jpg
+    ├── catalog.jsp                   # Main product display & filters
+    ├── cart.jsp                      # Shopping cart management view
+    ├── admin.jsp                     # Admin CRUD dashboard
+    ├── editProduct.jsp               # Product update form
+    ├── checkout.jsp                  # Customer billing form
+    ├── orderSuccess.jsp              # Order confirmation page
+    └── style.css                     # Custom glowing/neon UI stylesheet
